@@ -71,7 +71,7 @@ Remove-Item -Path $ServerListFile,$ToonListFile
 
 
 Get-Content -Path $ToonFilePath -Wait -Tail 5 |
-    Where-Object { $_ -like '*\aPC -1 Honeybush:Honeybush\/a tells General (1),*' } |
+    Where-Object { $_ -like '*\aPC -1 Honeybush:Honeybush\/a tells General (*),*' } |
         ForEach-Object {
         $Message = $_.split(",",2)[1] -replace '"'
         $pattern = '(?<=\[).+?(?=\])'
